@@ -9,7 +9,7 @@ export class SnacksController {
     console.log("Vending Snacks")
 
     this.drawSnacksCard()
-    this.buySnack()
+
     AppState.on('money', () => console.log('MONEY CHANGED!'))
     AppState.on('money', this.drawMoney)
   }
@@ -31,9 +31,9 @@ export class SnacksController {
     setHTML('snack-card', snackContent)
   }
 
-  buySnack() {
+  buySnack(snackName) {
     console.log('Buying Snack')
-    snacksService.buySnacks()
+    snacksService.buySnacks(snackName)
   }
 
 }

@@ -1,11 +1,11 @@
 import { AppState } from "../AppState.js"
-
 export class Snack {
   constructor(data) {
     this.name = data.name
     this.price = data.price
     this.imgUrl = data.imgUrl
   }
+
   get snackCard() {
     return `
  
@@ -16,7 +16,7 @@ export class Snack {
       <h3 class="text-center text-light">${this.name}</h3>
       <hr />
       <p class="text-light text-end">$${this.price}</p>
-      <button onclick="app.SnacksController.buySnack()">BUY</button>
+      <button onclick="app.SnacksController.buySnack('${this.name}')">BUY</button>
     </div>
   </div>
 
